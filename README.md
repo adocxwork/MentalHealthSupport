@@ -100,7 +100,7 @@ The following packages are required (automatically installed via `requirements.t
 ## 📁 Project Structure
 
 ```
-v2_WebApp/
+MentalHealthSupport/
 ├── app.py                      # Main Flask application
 ├── step_inference.py           # Emotion detection model inference
 ├── requirements.txt            # Python dependencies
