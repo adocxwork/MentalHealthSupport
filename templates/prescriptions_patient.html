@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}My Prescriptions | Patient{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h1>My Prescriptions</h1>
+        <a href="{{ url_for('dashboard') }}" class="btn-secondary">Back to Dashboard</a>
+    </div>
+
+    <div class="card">
+        <h2>View Prescriptions</h2>
+        <label>
+            Select Appointment
+            <select id="prescriptionAppointment">
+                <option value="">Select an appointment</option>
+                {% for appt in appointments %}
+                    <option value="{{ appt.id }}">Dr. {{ appt.doctor.name }} — {{ appt.slot_time.strftime('%Y-%m-%d %H:%M') }}</option>
+                {% endfor %}
+            </select>
+        </label>
+    </div>
+
+    <div class="card">
+        <h2>Prescription Details</h2>
+        <div id="prescriptionHistory" class="prescription-list">
+            <p class="muted">Select an appointment to view prescriptions.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,303 @@
+{
+  "messages": [
+    {
+      "username": "User1",
+      "text": "I’m so happy to see you again!",
+      "emotions": [
+        {
+          "emotion": "joy",
+          "confidence": 0.7341510653495789,
+          "idx": 17
+        }
+      ]
+    },
+    {
+      "username": "User2",
+      "text": "This is the worst day of my life.",
+      "emotions": [
+        {
+          "emotion": "sadness",
+          "confidence": 0.46696117520332336,
+          "idx": 25
+        },
+        {
+          "emotion": "disappointment",
+          "confidence": 0.3273542523384094,
+          "idx": 9
+        }
+      ]
+    },
+    {
+      "username": "User1",
+      "text": "I can’t believe you did that, I’m furious.",
+      "emotions": [
+        {
+          "emotion": "anger",
+          "confidence": 0.6971568465232849,
+          "idx": 2
+        }
+      ]
+    },
+    {
+      "username": "User2",
+      "text": "I feel so alone and hopeless right now.",
+      "emotions": [
+        {
+          "emotion": "sadness",
+          "confidence": 0.6528975367546082,
+          "idx": 25
+        },
+        {
+          "emotion": "disappointment",
+          "confidence": 0.45326685905456543,
+          "idx": 9
+        },
+        {
+          "emotion": "nervousness",
+          "confidence": 0.4504561126232147,
+          "idx": 19
+        }
+      ]
+    },
+    {
+      "username": "User1",
+      "text": "That movie was absolutely hilarious!",
+      "emotions": [
+        {
+          "emotion": "amusement",
+          "confidence": 0.7906959652900696,
+          "idx": 1
+        }
+      ]
+    },
+    {
+      "username": "User2",
+      "text": "I’m scared of what might happen next.",
+      "emotions": [
+        {
+          "emotion": "fear",
+          "confidence": 0.8819884657859802,
+          "idx": 14
+        }
+      ]
+    },
+    {
+      "username": "User1",
+      "text": "Wow, I didn’t expect that at all!",
+      "emotions": [
+        {
+          "emotion": "surprise",
+          "confidence": 0.7301306128501892,
+          "idx": 26
+        }
+      ]
+    },
+    {
+      "username": "User2",
+      "text": "I’m disgusted by how they treated him.",
+      "emotions": [
+        {
+          "emotion": "disgust",
+          "confidence": 0.7627140283584595,
+          "idx": 11
+        }
+      ]
+    },
+    {
+      "username": "User1",
+      "text": "You really made my day, thank you.",
+      "emotions": [
+        {
+          "emotion": "gratitude",
+          "confidence": 0.8764177560806274,
+          "idx": 15
+        }
+      ]
+    },
+    {
+      "username": "User2",
+      "text": "Nothing seems to matter anymore.",
+      "emotions": [
+        {
+          "emotion": "disappointment",
+          "confidence": 0.44332560896873474,
+          "idx": 9
+        },
+        {
+          "emotion": "annoyance",
+          "confidence": 0.4100530743598938,
+          "idx": 3
+        }
+      ]
+    },
+    {
+      "username": "User1",
+      "text": "I’m proud of what we achieved together.",
+      "emotions": [
+        {
+          "emotion": "pride",
+          "confidence": 0.8576567769050598,
+          "idx": 21
+        }
+      ]
+    },
+    {
+      "username": "User2",
+      "text": "I’m nervous about tomorrow’s exam.",
+      "emotions": [
+        {
+          "emotion": "nervousness",
+          "confidence": 0.8089555501937866,
+          "idx": 19
+        }
+      ]
+    },
+    {
+      "username": "User1",
+      "text": "That’s such a beautiful view.",
+      "emotions": [
+        {
+          "emotion": "admiration",
+          "confidence": 0.7917841672897339,
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "username": "User2",
+      "text": "Why does everything always go wrong for me?",
+      "emotions": [
+        {
+          "emotion": "curiosity",
+          "confidence": 0.5462803244590759,
+          "idx": 7
+        },
+        {
+          "emotion": "confusion",
+          "confidence": 0.4618116319179535,
+          "idx": 6
+        },
+        {
+          "emotion": "disappointment",
+          "confidence": 0.3545849025249481,
+          "idx": 9
+        }
+      ]
+    },
+    {
+      "username": "User1",
+      "text": "I’m feeling very relaxed and calm today.",
+      "emotions": [
+        {
+          "emotion": "relief",
+          "confidence": 0.7821497917175293,
+          "idx": 23
+        }
+      ]
+    },
+    {
+      "username": "User2",
+      "text": "I’m disappointed in your behavior.",
+      "emotions": [
+        {
+          "emotion": "disappointment",
+          "confidence": 0.7016823291778564,
+          "idx": 9
+        }
+      ]
+    },
+    {
+      "username": "User1",
+      "text": "You completely surprised me with that gift!",
+      "emotions": [
+        {
+          "emotion": "surprise",
+          "confidence": 0.7600353360176086,
+          "idx": 26
+        }
+      ]
+    },
+    {
+      "username": "User2",
+      "text": "I feel guilty for what I said earlier.",
+      "emotions": [
+        {
+          "emotion": "remorse",
+          "confidence": 0.710310161113739,
+          "idx": 24
+        }
+      ]
+    },
+    {
+      "username": "User1",
+      "text": "This food tastes amazing!",
+      "emotions": [
+        {
+          "emotion": "admiration",
+          "confidence": 0.6736351847648621,
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "username": "User2",
+      "text": "I don’t care anymore, do whatever you want.",
+      "emotions": [
+        {
+          "emotion": "anger",
+          "confidence": 0.5302817821502686,
+          "idx": 2
+        },
+        {
+          "emotion": "annoyance",
+          "confidence": 0.5119647979736328,
+          "idx": 3
+        }
+      ]
+    }
+  ],
+  "per_user": {
+    "User1": {
+      "top_emotions": [
+        "surprise",
+        "admiration",
+        "joy"
+      ],
+      "summary": "surprise, admiration, joy",
+      "total_messages": 10,
+      "emotion_breakdown": {
+        "surprise": 2,
+        "admiration": 2,
+        "joy": 1,
+        "anger": 1,
+        "amusement": 1,
+        "gratitude": 1,
+        "pride": 1,
+        "relief": 1
+      }
+    },
+    "User2": {
+      "top_emotions": [
+        "sadness",
+        "disappointment",
+        "fear"
+      ],
+      "summary": "sadness, disappointment, fear",
+      "total_messages": 10,
+      "emotion_breakdown": {
+        "sadness": 2,
+        "disappointment": 2,
+        "fear": 1,
+        "disgust": 1,
+        "nervousness": 1,
+        "curiosity": 1,
+        "remorse": 1,
+        "anger": 1
+      }
+    }
+  },
+  "meta": {
+    "n_messages": 20,
+    "n_users": 2
+  }
+}

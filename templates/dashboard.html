@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | Mental Health Support{% endblock %}
+{% block content %}
+<div class="page-container">
+    <h1>Dashboard</h1>
+    <p class="subtitle">Welcome, {{ current_user.name }}</p>
+    
+    <div class="card-grid">
+        {% if current_user.role == "doctor" %}
+            <a href="{{ url_for('appointments_page') }}" class="card-link">
+                <div class="card dashboard-card">
+                    <h3>Appointments</h3>
+                    <p>View and manage appointment requests</p>
+                </div>
+            </a>
+            <a href="{{ url_for('prescriptions_page') }}" class="card-link">
+                <div class="card dashboard-card">
+                    <h3>Prescriptions</h3>
+                    <p>Create and view prescriptions</p>
+                </div>
+            </a>
+            <a href="{{ url_for('chat_page') }}" class="card-link">
+                <div class="card dashboard-card">
+                    <h3>Chat</h3>
+                    <p>Chat with your patients</p>
+                </div>
+            </a>
+            <a href="{{ url_for('emotion_page') }}" class="card-link">
+                <div class="card dashboard-card">
+                    <h3>Emotion Detection</h3>
+                    <p>Analyze emotional sentiment from text</p>
+                </div>
+            </a>
+        {% else %}
+            <a href="{{ url_for('prescriptions_page') }}" class="card-link">
+                <div class="card dashboard-card">
+                    <h3>My Prescriptions</h3>
+                    <p>View your prescriptions</p>
+                </div>
+            </a>
+            <a href="{{ url_for('book_appointment_page') }}" class="card-link">
+                <div class="card dashboard-card">
+                    <h3>Book Appointment</h3>
+                    <p>Schedule a new appointment</p>
+                </div>
+            </a>
+            <a href="{{ url_for('appointments_page') }}" class="card-link">
+                <div class="card dashboard-card">
+                    <h3>My Appointments</h3>
+                    <p>View your appointment status</p>
+                </div>
+            </a>
+            <a href="{{ url_for('chat_page') }}" class="card-link">
+                <div class="card dashboard-card">
+                    <h3>Chat</h3>
+                    <p>Chat with your doctor</p>
+                </div>
+            </a>
+            <a href="{{ url_for('emotion_page') }}" class="card-link">
+                <div class="card dashboard-card">
+                    <h3>Emotion Detection</h3>
+                    <p>Analyze emotional sentiment from text</p>
+                </div>
+            </a>
+        {% endif %}
+    </div>
+    
+    <div class="card" style="margin-top: 2rem;">
+        <h2>Account Settings</h2>
+        <div class="account-info">
+            <p><strong>{{ current_user.name }}</strong></p>
+            <p class="muted">{{ current_user.display_label }}</p>
+        </div>
+        <form method="POST" action="{{ url_for('delete_account') }}" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');" style="margin-top: 1rem;">
+            <button type="submit" class="btn-secondary" style="background: var(--danger); color: white; border-color: var(--danger);">Delete Account</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

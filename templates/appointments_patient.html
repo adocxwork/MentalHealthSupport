@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}My Appointments | Patient{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h1>My Appointments</h1>
+        <div>
+            <a href="{{ url_for('book_appointment_page') }}" class="btn-primary">Book New Appointment</a>
+            <a href="{{ url_for('dashboard') }}" class="btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+
+    <div class="card">
+        {% if appointments %}
+            <table class="simple-table">
+                <thead>
+                    <tr>
+                        <th>Doctor</th>
+                        <th>Date & Time</th>
+                        <th>Reason</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for appt in appointments %}
+                    <tr>
+                        <td>
+                            <strong>{{ appt.doctor.name }}</strong><br>
+                            <span class="muted">{{ appt.doctor.specialization or 'Doctor' }}</span>
+                        </td>
+                        <td>{{ appt.slot_time.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td>{{ appt.reason or 'N/A' }}</td>
+                        <td>
+                            <span class="status-badge {{ appt.status }}">{{ appt.status|capitalize }}</span>
+                        </td>
+                        <td>
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                {% if appt.status != 'rejected' %}
+                                <a href="{{ url_for('chat_page') }}?appointment_id={{ appt.id }}" class="btn-ghost">Chat</a>
+                                <a href="{{ url_for('prescriptions_page') }}?appointment_id={{ appt.id }}" class="btn-ghost">Prescription</a>
+                                {% endif %}
+                                <button class="btn-secondary delete-appointment-btn" data-appointment-id="{{ appt.id }}" style="background: var(--danger); color: white; border-color: var(--danger);">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="muted">No appointments yet.</p>
+            <a href="{{ url_for('book_appointment_page') }}" class="btn-primary">Book Your First Appointment</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+

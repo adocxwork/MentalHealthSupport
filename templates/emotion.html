@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Emotion Detection{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h1>Emotion Detection</h1>
+        <a href="{{ url_for('dashboard') if current_user.is_authenticated else url_for('home') }}" class="btn-secondary">Back</a>
+    </div>
+
+    <div class="card">
+        <h2>Analyze Emotional Sentiment</h2>
+        <p class="subtitle">Paste text to analyze emotional sentiment using AI</p>
+        
+        <div class="input-section">
+            <textarea 
+                id="textInput" 
+                placeholder="Enter text to analyze..."
+                rows="6"
+            ></textarea>
+            
+            <div class="controls">
+                <label for="topK">Show top:</label>
+                <select id="topK">
+                    <option value="3">3</option>
+                    <option value="5" selected>5</option>
+                    <option value="10">10</option>
+                    <option value="28">All</option>
+                </select>
+                
+                <button id="analyzeBtn" class="btn-primary">Analyze</button>
+            </div>
+        </div>
+
+        <div id="resultsSection" class="results-section" style="display: none;">
+            <h3>Results</h3>
+            <div id="resultsContainer"></div>
+        </div>
+
+        <div id="errorSection" class="error-section" style="display: none;">
+            <span id="errorText"></span>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <main>
+            <div class="input-section">
+                <textarea 
+                    id="textInput" 
+                    placeholder="Enter text to analyze..."
+                    rows="6"
+                ></textarea>
+                
+                <div class="controls">
+                    <label for="topK">Show top:</label>
+                    <select id="topK">
+                        <option value="3">3</option>
+                        <option value="5" selected>5</option>
+                        <option value="10">10</option>
+                        <option value="28">All</option>
+                    </select>
+                    
+                    <button id="analyzeBtn" class="btn-primary">
+                        <span class="btn-text">Analyze</span>
+                        <span class="btn-loader" style="display: none;">Analyzing...</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <div id="resultsContainer"></div>
+            </div>
+
+            <div id="errorSection" class="error-section" style="display: none;">
+                <div class="error-message">
+                    <span class="error-icon">⚠️</span>
+                    <span id="errorText"></span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

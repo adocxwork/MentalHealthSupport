@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Prescriptions | Doctor{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h1>Prescriptions</h1>
+        <a href="{{ url_for('dashboard') }}" class="btn-secondary">Back to Dashboard</a>
+    </div>
+
+    <div class="card">
+        <h2>Create Prescription</h2>
+        <form id="prescriptionForm" class="form-simple">
+            <label>
+                Appointment
+                <select id="prescriptionAppointment" required>
+                    <option value="">Select an appointment</option>
+                    {% for appt in appointments %}
+                        <option value="{{ appt.id }}">Patient: {{ appt.patient.name }} — {{ appt.slot_time.strftime('%Y-%m-%d %H:%M') }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <label>
+                Prescription Notes
+                <textarea id="prescriptionNotes" rows="4" required placeholder="Medication, dosage, guidance"></textarea>
+            </label>
+            <label>
+                Recommended Tests / Scans
+                <textarea id="prescriptionTests" rows="2" placeholder="Optional tests or scans"></textarea>
+            </label>
+            <div class="form-actions">
+                <button class="btn-primary" type="submit">Save Prescription</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Prescription History</h2>
+        <div id="prescriptionHistory" class="prescription-list"></div>
+    </div>
+</div>
+{% endblock %}
+

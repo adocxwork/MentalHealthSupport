@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Appointments | Doctor{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h1>Appointments</h1>
+        <a href="{{ url_for('dashboard') }}" class="btn-secondary">Back to Dashboard</a>
+    </div>
+
+    <div class="card">
+        <h2>Pending Requests</h2>
+        {% if pending %}
+            <table class="simple-table">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Date & Time</th>
+                        <th>Reason</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for appt in pending %}
+                    <tr>
+                        <td>
+                            <strong>{{ appt.patient.name }}</strong><br>
+                            <span class="muted upi-click" data-upi="{{ appt.patient.upi_id }}" data-user-name="{{ appt.patient.name }}">Patient | {{ appt.patient.upi_id }}</span>
+                        </td>
+                        <td>{{ appt.slot_time.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td>{{ appt.reason or 'N/A' }}</td>
+                        <td>
+                            <button class="btn-primary status-btn" data-appointment-id="{{ appt.id }}" data-status="accepted">Accept</button>
+                            <button class="btn-secondary status-btn" data-appointment-id="{{ appt.id }}" data-status="rejected">Reject</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="muted">No pending requests.</p>
+        {% endif %}
+    </div>
+
+    <div class="card">
+        <h2>All Appointments</h2>
+        {% if appointments %}
+            <table class="simple-table">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Date & Time</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for appt in appointments %}
+                    <tr>
+                        <td>
+                            <strong>{{ appt.patient.name }}</strong><br>
+                            <span class="muted upi-click" data-upi="{{ appt.patient.upi_id }}" data-user-name="{{ appt.patient.name }}">Patient | {{ appt.patient.upi_id }}</span>
+                        </td>
+                        <td>{{ appt.slot_time.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td>
+                            <span class="status-badge {{ appt.status }}">{{ appt.status|capitalize }}</span>
+                        </td>
+                        <td>
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <a href="{{ url_for('chat_page') }}?appointment_id={{ appt.id }}" class="btn-ghost">Chat</a>
+                                <button class="btn-secondary delete-appointment-btn" data-appointment-id="{{ appt.id }}" style="background: var(--danger); color: white; border-color: var(--danger);">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="muted">No appointments yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+

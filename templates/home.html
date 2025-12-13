@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Home | Mental Health Support{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Mental Health Support Platform</h1>
+    <p class="subtitle">
+        Book appointments, chat securely, manage prescriptions, and analyze emotions.
+    </p>
+    <div class="hero-actions">
+        {% if current_user.is_authenticated %}
+            <a class="btn-primary" href="{{ url_for('dashboard') }}">Go to Dashboard</a>
+            <a class="btn-secondary" href="{{ url_for('emotion_page') }}">Emotion Analysis</a>
+        {% else %}
+            <a class="btn-primary" href="{{ url_for('register') }}">Get Started</a>
+            <a class="btn-secondary" href="{{ url_for('login') }}">Login</a>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+

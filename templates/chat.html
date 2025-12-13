@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Chat{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-header">
+        <h1>Chat</h1>
+        <a href="{{ url_for('dashboard') }}" class="btn-secondary">Back to Dashboard</a>
+    </div>
+
+    <div class="card chat-container">
+        <div class="chat-selector">
+            <label>
+                Select Appointment
+                <select id="chatAppointmentSelector">
+                    <option value="">Select an appointment</option>
+                    {% for data in appointment_data %}
+                        {% if current_user.role == "doctor" %}
+                            <option value="{{ data.appointment.id }}" 
+                                    data-opposite-upi="{{ data.opposite_user.upi_id }}" 
+                                    data-opposite-name="{{ data.opposite_user.name }}">
+                                Patient: {{ data.appointment.patient.name }} — {{ data.appointment.slot_time.strftime('%Y-%m-%d %H:%M') }}
+                            </option>
+                        {% else %}
+                            <option value="{{ data.appointment.id }}" 
+                                    data-opposite-upi="{{ data.opposite_user.upi_id }}" 
+                                    data-opposite-name="{{ data.opposite_user.name }}">
+                                Dr. {{ data.appointment.doctor.name }} — {{ data.appointment.slot_time.strftime('%Y-%m-%d %H:%M') }}
+                            </option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </label>
+        </div>
+        
+        <div id="chatHeader" class="chat-header">
+            <div id="chatUserInfo" style="display: none;">
+                <p><strong id="chatUserName"></strong></p>
+                <p class="muted" id="chatUserLabel"></p>
+                <span class="upi-click" id="chatUpiClick" style="cursor: pointer; text-decoration: underline; color: var(--dark-blue);">Click to view payment QR</span>
+            </div>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        
+        <form id="chatForm" class="chat-form">
+            <textarea id="chatInput" rows="2" placeholder="Type a message..." required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
