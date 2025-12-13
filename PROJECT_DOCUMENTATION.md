@@ -1021,7 +1021,7 @@ pip --version
 ```bash
 # If using Git
 git clone <repository-url>
-cd v2_WebApp
+cd MentalHealthSupport
 
 # Or download and extract ZIP file
 ```

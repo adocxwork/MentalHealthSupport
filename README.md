@@ -25,7 +25,7 @@ A full-stack web application designed to facilitate mental health support throug
 1. **Clone or download the repository**
    ```bash
    git clone <repository-url>
-   cd v2_WebApp
+   cd MentalHealthSupport
    ```
 
 2. **Create a virtual environment (recommended)**
