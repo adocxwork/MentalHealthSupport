@@ -166,14 +166,6 @@ To reset the database, delete `mental_health.db` and restart the application.
 
 This is a project for mental health support. Contributions and improvements are welcome!
 
-## 📄 License
-
-[Specify your license here]
-
-## 👥 Authors
-
-[Add author information]
-
 ## 🙏 Acknowledgments
 
 - RoBERTa model for emotion detection
