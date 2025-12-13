@@ -1307,6 +1307,6 @@ For questions or issues, refer to the troubleshooting section or check the code 
 
 ---
 
-**Last Updated**: [Current Date]
+**Last Updated**: 12/12/2025
 **Version**: 1.0.0
-**Maintainer**: [Your Name/Team]
+**Maintainer**: Aditya Gupta
