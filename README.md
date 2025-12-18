@@ -2,7 +2,7 @@
 
 A full-stack web application designed to facilitate mental health support through secure doctor-patient interactions, appointment management, real-time chat, prescription management, and AI-powered emotion detection.
 
-## 🌟 Features
+## Features
 
 - **Role-Based Authentication**: Separate interfaces for doctors and patients
 - **Appointment Management**: Book, accept, reject, and manage appointments
@@ -12,7 +12,7 @@ A full-stack web application designed to facilitate mental health support throug
 - **UPI Integration**: Display UPI IDs and generate QR codes for payments
 - **Responsive Design**: Modern, clean UI with mobile-friendly layout
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -63,7 +63,7 @@ A full-stack web application designed to facilitate mental health support throug
    - Open your browser and navigate to: `http://localhost:5000`
    - The application will automatically create the database on first run
 
-## 📋 Requirements
+## Requirements
 
 The following packages are required (automatically installed via `requirements.txt`):
 
@@ -78,7 +78,7 @@ The following packages are required (automatically installed via `requirements.t
 - Scikit-learn (>=1.3.0)
 - tqdm (>=4.65.0)
 
-## 🎯 Usage
+## Usage
 
 ### For Patients
 
@@ -97,7 +97,7 @@ The following packages are required (automatically installed via `requirements.t
 4. **Create Prescriptions**: Write prescriptions with notes and recommended tests
 5. **View History**: Access appointment and prescription history
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 MentalHealthSupport/
@@ -109,7 +109,7 @@ MentalHealthSupport/
 ├── emotion_roberta_model/      # Pre-trained emotion detection model
 ├── static/
 │   ├── style.css               # Application styles
-│   └── script.js                # Client-side JavaScript
+│   └── script.js               # Client-side JavaScript
 ├── templates/
 │   ├── base.html               # Base template
 │   ├── home.html               # Home page
@@ -123,11 +123,11 @@ MentalHealthSupport/
 │   ├── prescriptions_patient.html # Patient prescriptions view
 │   └── auth/
 │       ├── login.html          # Login page
-│       └── register.html      # Registration page
+│       └── register.html       # Registration page
 └── training/                   # Training data and scripts
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -138,7 +138,7 @@ MentalHealthSupport/
 
 The application uses SQLite by default. The database file (`mental_health.db`) is automatically created on first run.
 
-## 🛠️ Development
+## Development
 
 ### Running in Debug Mode
 
@@ -154,7 +154,7 @@ The application runs in debug mode by default. For production:
 
 To reset the database, delete `mental_health.db` and restart the application.
 
-## 📝 Notes
+## Notes
 
 - The emotion detection model requires the `emotion_roberta_model` directory with all model files
 - First-time model loading may take a few moments
@@ -162,11 +162,11 @@ To reset the database, delete `mental_health.db` and restart the application.
 - Appointments can be deleted, which automatically deletes related chats and prescriptions
 - UPI QR codes are generated using an external API (qrserver.com)
 
-## 🤝 Contributing
+## Contributing
 
 This is a project for mental health support. Contributions and improvements are welcome!
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - RoBERTa model for emotion detection
 - Flask framework
